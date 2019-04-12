@@ -10,6 +10,12 @@ $(() => {
     // global functions
     // =========================
 
+    // render data function
+    //// if no userdata, do nothing, throw no errors
+    //// if a title is unavailable, add keyword search text as title
+
+    // copy gif link function
+
     // =========================
     // event handlers
     // =========================
