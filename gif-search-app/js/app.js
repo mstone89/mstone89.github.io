@@ -28,6 +28,9 @@ $(() => {
     }
 
     // copy gif link function
+    // creates a temporary input element, the value of which becomes the image url passed to the function
+    // appends temporary input to body, selects the input, copies it, then removes the input,
+    // allowing the url to be copied
     const copyGifUrl = (imageSource) => {
         const $tempInput = $('<input>');
         $tempInput.val(imageSource);
