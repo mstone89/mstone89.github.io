@@ -14,13 +14,13 @@ $(() => {
     const renderData = (limit, apiData, userInput) => {
         for (let i = 0; i < limit; i++) {
             const $divGif = $('<div>').addClass('gif-container');
-            const $divGifTitle = $('<div>');
+            const $divGifTitle = $('<div>').addClass('gif-title');
             if (apiData.data[i].title === ' ' || apiData.data[i].title === '') {
                 $divGifTitle.text(userInput + ' GIF');
             } else {
                 $divGifTitle.text(apiData.data[i].title);
             }
-            const $gif = $('<img>').attr('src', apiData.data[i].images.fixed_height_small.url);
+            const $gif = $('<img>').attr('src', apiData.data[i].images.fixed_height.url).addClass('gif-image');
             $divGif.append($divGifTitle);
             $divGif.append($gif);
             $mainContainer.append($divGif);
