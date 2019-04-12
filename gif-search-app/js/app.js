@@ -11,10 +11,15 @@ $(() => {
 
     // render data function
     //// if a title is unavailable, add keyword search text as title
-    const renderData = (limit, apiData) => {
+    const renderData = (limit, apiData, userInput) => {
         for (let i = 0; i < limit; i++) {
             const $divGif = $('<div>').addClass('gif-container');
-            const $divGifTitle = $('<div>').text(apiData.data[i].title);
+            const $divGifTitle = $('<div>');
+            if (apiData.data[i].title === ' ' || apiData.data[i].title === '') {
+                $divGifTitle.text(userInput + ' GIF');
+            } else {
+                $divGifTitle.text(apiData.data[i].title);
+            }
             const $gif = $('<img>').attr('src', apiData.data[i].images.fixed_height_small.url);
             $divGif.append($divGifTitle);
             $divGif.append($gif);
@@ -46,10 +51,10 @@ $(() => {
         );
         dataUrl.done(
             (data) => {
-                // console.log('data successfully pulled', data);
+                console.log('data successfully pulled', data);
                 // if no userdata, do nothing, throw no errors, else render data on page
                 if ($userInput !== '') {
-                    renderData(50, data);
+                    renderData(50, data, $userInput);
                 }
         });
     });
