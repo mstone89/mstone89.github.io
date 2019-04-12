@@ -28,7 +28,14 @@ $(() => {
     }
 
     // copy gif link function
-
+    const copyGifUrl = (imageSource) => {
+        const $tempInput = $('<input>');
+        $tempInput.val(imageSource);
+        $('body').append($tempInput);
+        $tempInput.select();
+        document.execCommand('copy');
+        $tempInput.remove();
+    }
     // =========================
     // event handlers
     // =========================
@@ -47,15 +54,19 @@ $(() => {
 
         // get data based on user input. current results limited to 50 for now
         let dataUrl = $.get(
-            "http://api.giphy.com/v1/gifs/search?q=" + $userInput + "&api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P&limit=50"
+            "http://api.giphy.com/v1/gifs/search?q=" + $userInput + "&api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P&limit=5"
         );
         dataUrl.done(
             (data) => {
                 console.log('data successfully pulled', data);
                 // if no userdata, do nothing, throw no errors, else render data on page
                 if ($userInput !== '') {
-                    renderData(50, data, $userInput);
+                    renderData(5, data, $userInput);
                 }
+                $('.gif-image').on('click', (event) => {
+                    const $imageSource = $(event.currentTarget).attr('src');
+                    copyGifUrl($imageSource);
+                });
         });
     });
 });
