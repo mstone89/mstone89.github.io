@@ -27,6 +27,21 @@ $(() => {
         }
     }
 
+    // create and append gif, title, etc. after clicking on random button
+    const addRandomGif = (apiData) => {
+        const $divGif = $('<div>').addClass('gif-container');
+        const $divGifTitle = $('<div>').addClass('gif-title');
+        if (apiData.data.title === ' ' || apiData.data.title === '') {
+            $divGifTitle.text('random GIF');
+        } else {
+            $divGifTitle.text(apiData.data.title);
+        }
+        const $gif = $('<img>').attr('src', apiData.data.images.fixed_height.url).addClass('gif-image');
+        $divGif.append($divGifTitle);
+        $divGif.append($gif);
+        $mainContainer.append($divGif);
+    }
+
     // copy gif link function
     // creates a temporary input element, the value of which becomes the image url passed to the function
     // appends temporary input to body, selects the input, copies it, then removes the input,
@@ -38,11 +53,12 @@ $(() => {
         document.execCommand('copy');
         $tempInput.remove();
     }
+
     // =========================
-    // event handlers
+    // event listeners
     // =========================
 
-    // event handler for user keyword input on form submission
+    // event listener for user keyword input on form submission
     $('form').on('submit', (event) => {
 
         // grab user input keyword data
@@ -70,5 +86,24 @@ $(() => {
                     copyGifUrl($imageSource);
                 });
         });
+    });
+
+    // event listener for clicking random button, to display random gif
+    $('.random-button').on('click', (event) => {
+        // empty previous items from main div. keep page from reloading on form submission
+        $mainContainer.empty();
+
+        let dataUrl = $.get(
+            "http://api.giphy.com/v1/gifs/random?api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P"
+        );
+        dataUrl.done(
+            (data) => {
+                console.log('random gif successfully pulled', data);
+                addRandomGif(data);
+            },
+            () => {
+                console.log('bad');
+            }
+        )
     });
 });
