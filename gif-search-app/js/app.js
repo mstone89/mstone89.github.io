@@ -10,7 +10,6 @@ $(() => {
     // =========================
 
     // render data function
-    //// if no userdata, do nothing, throw no errors
     //// if a title is unavailable, add keyword search text as title
     const renderData = (limit, apiData) => {
         for (let i = 0; i < limit; i++) {
@@ -33,15 +32,12 @@ $(() => {
     $('form').on('submit', (event) => {
 
         // grab user input keyword data
-        const $userInput = $('input[type="text"]').val();
+        let $userInput = $('input[type="text"]').val();
 
-        // empty previous items from main div
-        $mainContainer.empty();
-
-        // keep page from reloading on form submission
-        event.preventDefault();
-
+        // empty previous items from main div. keep page from reloading on form submission
         // reset form submission to be default (blank)
+        $mainContainer.empty();
+        event.preventDefault();
         $(event.currentTarget).trigger('reset');
 
         // get data based on user input. current results limited to 50 for now
@@ -50,8 +46,11 @@ $(() => {
         );
         dataUrl.done(
             (data) => {
-                console.log('data successfully pulled', data);
-                renderData(50, data);
+                // console.log('data successfully pulled', data);
+                // if no userdata, do nothing, throw no errors, else render data on page
+                if ($userInput !== '') {
+                    renderData(50, data);
+                }
         });
     });
 });
