@@ -32,8 +32,7 @@ $(() => {
     // appends temporary input to body, selects the input, copies it, then removes the input,
     // allowing the url to be copied
     const copyGifUrl = (imageSource) => {
-        const $tempInput = $('<input>');
-        $tempInput.val(imageSource);
+        const $tempInput = $('<input>').val(imageSource);
         $('body').append($tempInput);
         $tempInput.select();
         document.execCommand('copy');
