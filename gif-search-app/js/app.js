@@ -22,7 +22,7 @@ $(() => {
             } else {
                 $divGifTitle.text(apiData.data[i].title);
             }
-            const $gif = $('<img>').attr('src', apiData.data[i].images.fixed_height.url).addClass('gif-image');
+            const $gif = $('<img>').attr('src', apiData.data[i].images.original.url).addClass('gif-image');
             $divHeader.append($divGifTitle);
             $divHeader.append($htmlStar);
             $divGif.append($divHeader);
@@ -42,7 +42,7 @@ $(() => {
         } else {
             $divGifTitle.text(apiData.data.title);
         }
-        const $gif = $('<img>').attr('src', apiData.data.images.fixed_height.url).addClass('gif-image');
+        const $gif = $('<img>').attr('src', apiData.data.images.original.url).addClass('gif-image');
         $divHeader.append($divGifTitle);
         $divHeader.append($htmlStar);
         $divGif.append($divHeader);
