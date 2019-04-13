@@ -12,6 +12,7 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    z-index: 2;
 }
 
 header > h1 {
@@ -120,7 +121,9 @@ form {
     border-radius: 10px;
 }
 
+.modal-gif-container {
 
+}
 
 /* min-width 700px */
 @media (min-width: 700px) {
