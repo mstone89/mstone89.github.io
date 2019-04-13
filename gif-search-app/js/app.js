@@ -1,6 +1,6 @@
 $(() => {
     // =========================
-    // global variables
+    // variables
     // =========================
 
     const $mainContainer = $('.main-container');
@@ -8,9 +8,10 @@ $(() => {
     const $favesModal = $('#modal');
     const $overlay = $('#overlay');
     const $closeFavesBtn = $('#close-modal');
+    const $favoriteBtn = $('.star');
 
     // =========================
-    // global functions
+    // functions
     // =========================
 
     // render data function
@@ -78,6 +79,12 @@ $(() => {
         $favesModal.hide();
     }
 
+    // favorite specific gif
+    const favoriteGif = (event) => {
+        const $selectedGif = $(event.currentTarget).parent().parent();
+        $('#fave-gifs').append($selectedGif);
+    }
+
     // =========================
     // event listeners
     // =========================
@@ -109,12 +116,13 @@ $(() => {
                     const $imageSource = $(event.currentTarget).attr('src');
                     copyGifUrl($imageSource);
                 });
+                $('.star').on('click', favoriteGif);
         });
     });
 
     // event listener for clicking random button, to display random gif
     $('.random-button').on('click', (event) => {
-        // empty previous items from main div. keep page from reloading on form submission
+        // empty previous items from main div.
         $mainContainer.empty();
 
         let dataUrl = $.get(
