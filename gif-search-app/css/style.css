@@ -2,6 +2,18 @@
     border: 1px solid orange;
 }
 
+.search {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.main-container {
+
+}
+
 .gif-container {
 
 }
