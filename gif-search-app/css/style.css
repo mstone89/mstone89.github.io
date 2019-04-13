@@ -35,12 +35,17 @@ form {
     flex-wrap: wrap;
 }
 
-input {
-
+.submit-button {
+    cursor: pointer;
 }
 
 .random-button {
+    cursor: pointer;
+}
 
+#fav-button {
+    color: orange;
+    cursor: pointer;
 }
 
 .main-container {
@@ -78,6 +83,7 @@ input {
 .star {
     color: orange;
     display: inline;
+    cursor: pointer;
 }
 
 .gif-image {
@@ -90,6 +96,7 @@ input {
 
 /* Modal overlay */
 #overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -100,6 +107,7 @@ input {
 }
 
 #modal {
+    display: none;
     width: 80%;
     height: 200px;
     position: fixed;
