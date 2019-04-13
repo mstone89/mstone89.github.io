@@ -103,7 +103,7 @@ $(() => {
 
         // get data based on user input. current results limited to 50 for now
         let dataUrl = $.get(
-            "http://api.giphy.com/v1/gifs/search?q=" + $userInput + "&api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P&limit=25"
+            "https://api.giphy.com/v1/gifs/search?q=" + $userInput + "&api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P&limit=25"
         );
         dataUrl.done(
             (data) => {
@@ -126,7 +126,7 @@ $(() => {
         $mainContainer.empty();
 
         let dataUrl = $.get(
-            "http://api.giphy.com/v1/gifs/random?api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P"
+            "https://api.giphy.com/v1/gifs/random?api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P"
         );
         dataUrl.done(
             (data) => {
