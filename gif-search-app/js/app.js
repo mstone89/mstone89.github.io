@@ -83,6 +83,21 @@ $(() => {
     const favoriteGif = (event) => {
         const $selectedGif = $(event.currentTarget).parent().parent();
         $selectedGif.clone().attr('class', 'modal-gif-container').appendTo('#fave-gifs');
+        // console.log($selectedGif);
+        populateStorage();
+    }
+
+    // save favorited gifs in local storage
+    const populateStorage = () => {
+        const $appendedGifs = $('#fave-gifs').children();
+        console.log($appendedGifs);
+        for (let i = 0; i < $appendedGifs.length; i++) {
+            const $imgUrl = $appendedGifs[i].children[1].src;
+            localStorage.setItem('src-' + i, $imgUrl);
+            // console.log(localStorage);
+            // console.log($appendedGifs[i].children[1].src); // works
+            // console.log($appendedGifs[i].children('img')); // does not work
+        }
     }
 
     // =========================
@@ -142,4 +157,6 @@ $(() => {
     // event listeners for opening/closing favorites modal
     $openFavesBtn.on('click', openFavesModal);
     $closeFavesBtn.on('click', closeFavesModal);
+
+
 });
