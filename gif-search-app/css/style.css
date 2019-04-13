@@ -10,6 +10,20 @@
     background-color: white;
 }
 
+form {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+input {
+
+}
+
+.random-button {
+
+}
+
 .main-container {
 
 }
@@ -19,7 +33,8 @@
 }
 
 .gif-image {
-
+    display: block;
+    margin: 0 auto;
 }
 
 .gif-title {
