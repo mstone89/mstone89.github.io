@@ -4,6 +4,10 @@ $(() => {
     // =========================
 
     const $mainContainer = $('.main-container');
+    const $openFavesBtn = $('#fav-button');
+    const $favesModal = $('#modal');
+    const $overlay = $('#overlay');
+    const $closeFavesBtn = $('#close-modal');
 
     // =========================
     // global functions
@@ -62,6 +66,18 @@ $(() => {
         $tempInput.remove();
     }
 
+    // open favorites modal
+    const openFavesModal = () => {
+        $overlay.show();
+        $favesModal.show();
+    }
+
+    // close favorites modal
+    const closeFavesModal = () => {
+        $overlay.hide();
+        $favesModal.hide();
+    }
+
     // =========================
     // event listeners
     // =========================
@@ -114,4 +130,8 @@ $(() => {
             }
         )
     });
+
+    // event listeners for opening/closing favorites modal
+    $openFavesBtn.on('click', openFavesModal);
+    $closeFavesBtn.on('click', closeFavesModal);
 });
