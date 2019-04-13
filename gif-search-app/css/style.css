@@ -1,8 +1,8 @@
 /* All CSS below until media query is mobile first */
 
-* {
+/* * {
     border: 1px solid orange;
-}
+} */
 
 header {
     background-color: white;
@@ -59,6 +59,8 @@ input {
     width: 350px;
     background-color: white;
     border-radius: 10px;
+    /* may need this for modal priority */
+    z-index: 1;
 }
 
 .gif-header {
@@ -84,6 +86,29 @@ input {
     /* Gifs are set to original sizing, so largest possible size, for all devices. This allows the image to be scaled down to fit the container for mobile */
     max-width: 100%;
     max-height: 175px;
+}
+
+/* Modal overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+#modal {
+    width: 80%;
+    height: 200px;
+    position: fixed;
+    top: 25%;
+    left: 10%;
+    z-index: 11;
+    background-color: white;
+    overflow: auto;
+    border-radius: 10px;
 }
 
 /* min-width 700px */
@@ -147,45 +172,4 @@ input {
     .gif-container {
         margin: 20px;
     }
-}
-
-/* #modal {
-    background-color: rgba(0, 0, 0, 0.8)
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 9999;
-    overflow: auto;
-} */
-
-/* #modal-main {
-    background-color: white;
-    height: 600px;
-    width: 90%;
-    margin: 20px auto;
-    border-radius: 10px;
-} */
-
-
-/* Testing out modal overlay */
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    widht: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 10;
-}
-
-#modal {
-    width: 80%;
-    height: 200px;
-    position: fixed;
-    top: 25%;
-    left: 10%;
-    z-index: 11;
-    background-color: white;
 }
