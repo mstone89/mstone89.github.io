@@ -1,6 +1,8 @@
-/* * {
+/* All CSS below until media query is mobile first */
+
+* {
     border: 1px solid orange;
-} */
+}
 
 header {
     background-color: white;
@@ -76,4 +78,38 @@ input {
     /* Gifs are set to original sizing, so largest possible size, for all devices. This allows the image to be scaled down to fit the container for mobile */
     max-width: 100%;
     max-height: 200px;
+}
+
+/* min-width 700px */
+/* @media (min-width: 700px) {
+    .main-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .gif-container {
+        width: 300px;
+    }
+
+    .gif-image {
+        max-height: 200px;
+    }
+} */
+
+
+
+/* min-width 1000px */
+@media (min-width: 1000px) {
+    .main-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .gif-container {
+        width: 400px;
+    }
+
+    .gif-image {
+        max-height: 250px;
+    }
 }
