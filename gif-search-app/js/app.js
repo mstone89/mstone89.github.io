@@ -15,6 +15,7 @@ $(() => {
         for (let i = 0; i < limit; i++) {
             const $divGif = $('<div>').addClass('gif-container');
             const $divGifTitle = $('<div>').addClass('gif-title');
+            const $htmlStar = $('<div>').html('&#x2605;').addClass('star');
             if (apiData.data[i].title === ' ' || apiData.data[i].title === '') {
                 $divGifTitle.text(userInput + ' GIF');
             } else {
@@ -22,6 +23,7 @@ $(() => {
             }
             const $gif = $('<img>').attr('src', apiData.data[i].images.fixed_height.url).addClass('gif-image');
             $divGif.append($divGifTitle);
+            $divGif.append($htmlStar);
             $divGif.append($gif);
             $mainContainer.append($divGif);
         }
@@ -31,6 +33,7 @@ $(() => {
     const addRandomGif = (apiData) => {
         const $divGif = $('<div>').addClass('gif-container');
         const $divGifTitle = $('<div>').addClass('gif-title');
+        const $htmlStar = $('<div>').html('&#x2605;').addClass('star');
         if (apiData.data.title === ' ' || apiData.data.title === '') {
             $divGifTitle.text('random GIF');
         } else {
@@ -38,6 +41,7 @@ $(() => {
         }
         const $gif = $('<img>').attr('src', apiData.data.images.fixed_height.url).addClass('gif-image');
         $divGif.append($divGifTitle);
+        $divGif.append($htmlStar);
         $divGif.append($gif);
         $mainContainer.append($divGif);
     }

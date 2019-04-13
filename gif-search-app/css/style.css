@@ -56,4 +56,10 @@ input {
 
 .gif-title {
     padding: 5px 10px 5px 10px;
+    display: inline;
+}
+
+.star {
+    color: orange;
+    display: inline;
 }
