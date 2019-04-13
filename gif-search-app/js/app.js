@@ -82,7 +82,7 @@ $(() => {
     // favorite specific gif
     const favoriteGif = (event) => {
         const $selectedGif = $(event.currentTarget).parent().parent();
-        $('#fave-gifs').append($selectedGif);
+        $selectedGif.clone().attr('class', 'modal-gif-container').appendTo('#fave-gifs');
     }
 
     // =========================
