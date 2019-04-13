@@ -41,17 +41,20 @@ input {
 }
 
 .gif-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin: 15px auto;
     width: 88%;
     background-color: white;
     border-radius: 10px;
 }
 
-.gif-image {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%;
-    max-height: 100%;
+.gif-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .gif-title {
@@ -62,4 +65,11 @@ input {
 .star {
     color: orange;
     display: inline;
+}
+
+.gif-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
 }

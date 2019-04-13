@@ -14,6 +14,7 @@ $(() => {
     const renderData = (limit, apiData, userInput) => {
         for (let i = 0; i < limit; i++) {
             const $divGif = $('<div>').addClass('gif-container');
+            const $divHeader = $('<div>').addClass('gif-header');
             const $divGifTitle = $('<div>').addClass('gif-title');
             const $htmlStar = $('<div>').html('&#x2605;').addClass('star');
             if (apiData.data[i].title === ' ' || apiData.data[i].title === '') {
@@ -22,8 +23,9 @@ $(() => {
                 $divGifTitle.text(apiData.data[i].title);
             }
             const $gif = $('<img>').attr('src', apiData.data[i].images.fixed_height.url).addClass('gif-image');
-            $divGif.append($divGifTitle);
-            $divGif.append($htmlStar);
+            $divHeader.append($divGifTitle);
+            $divHeader.append($htmlStar);
+            $divGif.append($divHeader);
             $divGif.append($gif);
             $mainContainer.append($divGif);
         }
@@ -32,6 +34,7 @@ $(() => {
     // create and append gif, title, etc. after clicking on random button
     const addRandomGif = (apiData) => {
         const $divGif = $('<div>').addClass('gif-container');
+        const $divHeader = $('<div>').addClass('gif-header');
         const $divGifTitle = $('<div>').addClass('gif-title');
         const $htmlStar = $('<div>').html('&#x2605;').addClass('star');
         if (apiData.data.title === ' ' || apiData.data.title === '') {
@@ -40,8 +43,9 @@ $(() => {
             $divGifTitle.text(apiData.data.title);
         }
         const $gif = $('<img>').attr('src', apiData.data.images.fixed_height.url).addClass('gif-image');
-        $divGif.append($divGifTitle);
-        $divGif.append($htmlStar);
+        $divHeader.append($divGifTitle);
+        $divHeader.append($htmlStar);
+        $divGif.append($divHeader);
         $divGif.append($gif);
         $mainContainer.append($divGif);
     }
