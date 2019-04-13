@@ -80,14 +80,14 @@ $(() => {
 
         // get data based on user input. current results limited to 50 for now
         let dataUrl = $.get(
-            "http://api.giphy.com/v1/gifs/search?q=" + $userInput + "&api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P&limit=5"
+            "http://api.giphy.com/v1/gifs/search?q=" + $userInput + "&api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P&limit=25"
         );
         dataUrl.done(
             (data) => {
                 console.log('data successfully pulled', data);
                 // if no userdata, do nothing, throw no errors, else render data on page
                 if ($userInput !== '') {
-                    renderData(5, data, $userInput);
+                    renderData(25, data, $userInput);
                 }
                 $('.gif-image').on('click', (event) => {
                     const $imageSource = $(event.currentTarget).attr('src');

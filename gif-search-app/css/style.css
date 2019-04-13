@@ -1,8 +1,8 @@
 /* All CSS below until media query is mobile first */
 
-* {
+/* * {
     border: 1px solid orange;
-}
+} */
 
 header {
     background-color: white;
@@ -95,6 +95,7 @@ input {
 
     .gif-image {
         max-width: 100%;
+        max-height: 150px;
     }
 }
 
@@ -111,5 +112,33 @@ input {
 
     .gif-image {
         max-height: 200px;
+    }
+}
+
+/* min-width 1600px */
+@media (min-width: 1600px) {
+    .main-container {
+        justify-content: center;
+        margin: auto;
+        width: 66%;
+        padding-top: 117px;
+        background-color: darkgray;
+    }
+    .gif-container {
+        margin: 20px;
+    }
+}
+
+/* min-width 1900px */
+@media (min-width: 1900px) {
+    .main-container {
+        justify-content: center;
+        margin: auto;
+        width: 72%;
+        padding-top: 117px;
+        background-color: darkgray;
+    }
+    .gif-container {
+        margin: 20px;
     }
 }
