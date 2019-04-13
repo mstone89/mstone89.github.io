@@ -8,3 +8,6 @@ https://www.w3schools.com/howto/howto_css_fixed_footer.asp
 
 <!-- Helped with centering images -->
 https://www.w3schools.com/css/css_align.asp
+
+<!-- Helped with getting the modal to overlay over added elements -->
+https://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
