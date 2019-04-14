@@ -119,15 +119,15 @@ $(() => {
     }
 
     // after page refresh/revisit, add back favorited gifs to modal storage, if any
-    // const repopulateFavorites = () => {
-    //     if (localStorage.length > 0) {
-    //         for (let i = 0; i < localStorage.length; i++) {
-    //             // console.log(localStorage);
-    //             const $gif = $('<img>').attr('src', localStorage.getItem('src-' + i)).addClass('gif-image');
-    //             $('#fave-gifs').append($gif);
-    //         }
-    //     }
-    // }
+    const repopulateFavorites = () => {
+        if (localStorage.length > 0) {
+            for (let i = 0; i < localStorage.length; i++) {
+                // console.log(localStorage);
+                const $gif = $('<img>').attr('src', localStorage.getItem('src-' + i)).addClass('gif-image');
+                $('#fave-gifs').append($gif);
+            }
+        }
+    }
 
     // =========================
     // event listeners
@@ -188,5 +188,5 @@ $(() => {
     $closeFavesBtn.on('click', closeFavesModal);
     $clearFavesBtn.on('click', clearFavesModal);
 
-    // repopulateFavorites();
+    repopulateFavorites();
 });
