@@ -176,9 +176,11 @@ $(() => {
             (data) => {
                 console.log('random gif successfully pulled', data);
                 addRandomGif(data);
-            },
-            () => {
-                console.log('bad');
+                $('.gif-image').on('click', (event) => {
+                    const $imageSource = $(event.currentTarget).attr('src');
+                    copyGifUrl($imageSource);
+                });
+                $('.star').on('click', favoriteGif);
             }
         )
     });
