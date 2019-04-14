@@ -111,9 +111,9 @@ form {
 #modal {
     display: none;
     width: 80%;
-    height: 500px;
+    height: 90%;
     position: fixed;
-    top: 25%;
+    top: 20px;
     left: 10%;
     z-index: 11;
     background-color: white;

@@ -9,6 +9,7 @@ $(() => {
     const $overlay = $('#overlay');
     const $closeFavesBtn = $('#close-modal');
     const $favoriteBtn = $('.star');
+    const $clearFavesBtn = $('#clear-modal');
 
     // =========================
     // functions
@@ -77,6 +78,16 @@ $(() => {
     const closeFavesModal = () => {
         $overlay.hide();
         $favesModal.hide();
+    }
+
+    const clearFavesModal = () => {
+        const $appendedGifs = $('#fave-gifs').children();
+        if ($('#fave-gifs').children().length > 0) {
+            localStorage.clear();
+            for (let i = 0; i < $appendedGifs.length; i++) {
+                $appendedGifs[i].remove();
+            }
+        }
     }
 
     // favorite specific gif
@@ -171,6 +182,7 @@ $(() => {
     // event listeners for opening/closing favorites modal
     $openFavesBtn.on('click', openFavesModal);
     $closeFavesBtn.on('click', closeFavesModal);
+    $clearFavesBtn.on('click', clearFavesModal);
 
 
 });
