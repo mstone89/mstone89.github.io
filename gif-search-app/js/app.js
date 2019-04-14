@@ -80,9 +80,23 @@ $(() => {
     }
 
     // favorite specific gif
+    // Is the length of the modal gifs > 0 => NO => add the gif to modal
+    // => YES => grab the selected gif url, and the children of the gif Modal
+    // for all children in the modal, if the selected gif url equals the children url, return
+    // otherwise, exits if statement with no return, appends as normal
     const favoriteGif = (event) => {
-        const $selectedGif = $(event.currentTarget).parent().parent();
-        $selectedGif.clone().attr('class', 'modal-gif-container').appendTo('#fave-gifs');
+        if ($('#fave-gifs').children().length > 0) {
+            const $selectedImgUrl = $(event.currentTarget).parent().parent().children().eq(1).prop('src');
+            const $appendedGifs = $('#fave-gifs').children();
+            for (let i = 0; i < $appendedGifs.length; i++) {
+                // console.log($selectedImgUrl + ' ////////////////');
+                if ($selectedImgUrl === $appendedGifs[i].children[1].src) {
+                    // console.log($appendedGifs[i].children[1].src);
+                    return;
+                }
+            }
+        }
+        $(event.currentTarget).parent().parent().clone().attr('class', 'modal-gif-container').appendTo('#fave-gifs');
         // console.log($selectedGif);
         populateStorage();
     }
