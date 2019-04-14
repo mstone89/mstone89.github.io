@@ -100,30 +100,34 @@ $(() => {
             const $selectedImgUrl = $(event.currentTarget).parent().parent().children().eq(1).prop('src');
             const $appendedGifs = $('#fave-gifs').children();
             for (let i = 0; i < $appendedGifs.length; i++) {
-                // console.log($selectedImgUrl + ' ////////////////');
-                if ($selectedImgUrl === $appendedGifs[i].children[1].src) {
-                    // console.log($appendedGifs[i].children[1].src);
+                if ($selectedImgUrl === $appendedGifs[i].src) {
                     return;
                 }
             }
         }
-        $(event.currentTarget).parent().parent().clone().attr('class', 'modal-gif-container').appendTo('#fave-gifs');
-        // console.log($selectedGif);
+        $(event.currentTarget).parent().parent().children().eq(1).clone().attr('class', 'gif-image').appendTo('#fave-gifs');
         populateStorage();
     }
 
     // save favorited gifs in local storage
     const populateStorage = () => {
         const $appendedGifs = $('#fave-gifs').children();
-        console.log($appendedGifs);
         for (let i = 0; i < $appendedGifs.length; i++) {
-            const $imgUrl = $appendedGifs[i].children[1].src;
+            const $imgUrl = $appendedGifs[i].src;
             localStorage.setItem('src-' + i, $imgUrl);
-            // console.log(localStorage);
-            // console.log($appendedGifs[i].children[1].src); // works
-            // console.log($appendedGifs[i].children('img')); // does not work
         }
     }
+
+    // after page refresh/revisit, add back favorited gifs to modal storage, if any
+    // const repopulateFavorites = () => {
+    //     if (localStorage.length > 0) {
+    //         for (let i = 0; i < localStorage.length; i++) {
+    //             // console.log(localStorage);
+    //             const $gif = $('<img>').attr('src', localStorage.getItem('src-' + i)).addClass('gif-image');
+    //             $('#fave-gifs').append($gif);
+    //         }
+    //     }
+    // }
 
     // =========================
     // event listeners
@@ -184,5 +188,5 @@ $(() => {
     $closeFavesBtn.on('click', closeFavesModal);
     $clearFavesBtn.on('click', clearFavesModal);
 
-
+    // repopulateFavorites();
 });
