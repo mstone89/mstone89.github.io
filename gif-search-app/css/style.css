@@ -216,6 +216,7 @@ form {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        padding-top: 83px;
     }
 
     .gif-container {
@@ -258,6 +259,7 @@ form {
     .searchbar {
         width: 275px;
         height: 40px;
+        padding-bottom: 0;
     }
 
     .submit-button, .random-button, #fav-button {
@@ -288,7 +290,7 @@ form {
     .main-container {
         justify-content: center;
         margin: auto;
-        width: 66%;
+        width: 75%;
         padding-top: 117px;
     }
     .gif-container {
@@ -302,7 +304,7 @@ form {
         justify-content: center;
         margin: auto;
         width: 72%;
-        padding-top: 117px;
+        padding-top: 83px;
     }
     .gif-container {
         margin: 20px;
