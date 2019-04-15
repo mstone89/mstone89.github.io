@@ -37,7 +37,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: white;
 }
 
 form {
@@ -45,16 +44,40 @@ form {
     flex-wrap: wrap;
 }
 
+.searchbar {
+    border: none;
+    width: 150px;
+    height: 25px;
+    padding-left: 10px;
+}
+
 .submit-button {
     cursor: pointer;
+    border: none;
+    background-color: #FF5A14;
+    color: #F3F9D2;
 }
 
 .random-button {
     cursor: pointer;
+    padding: 0 15px;
+    margin: 0 10px;
+    background-color: #63264A;
+    color: #F3F9D2;
+    border: none;
 }
 
 #fav-button {
     color: #FF5A14;
+    cursor: pointer;
+    width: 70px;
+    border: none;
+    background-color: #1DD3B0;
+}
+
+#fav-button > span {
+    color: #63264A;
+    display: inline;
     cursor: pointer;
 }
 
@@ -102,12 +125,6 @@ form {
     cursor: pointer;
     padding: 0 .5em 0 0;
     font-size: 1.5em;
-    cursor: pointer;
-}
-
-#fav-button > span {
-    color: black;
-    display: inline;
     cursor: pointer;
 }
 
