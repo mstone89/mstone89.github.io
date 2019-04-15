@@ -105,7 +105,9 @@ $(() => {
                 }
             }
         }
-        $(event.currentTarget).parent().parent().children().eq(1).clone().attr('class', 'gif-image').appendTo('#fave-gifs');
+        const $favedGif = $(event.currentTarget).parent().parent().children().eq(1).clone().appendTo('#fave-gifs');
+        const $imageSource = $favedGif.attr('src');
+        copyGifUrl($imageSource);
         populateStorage();
     }
 
