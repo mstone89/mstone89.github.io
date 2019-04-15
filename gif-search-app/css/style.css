@@ -5,7 +5,7 @@
 } */
 
 header {
-    background-color: white;
+    /* background-color: #E55000; */
     position: fixed;
     width: 100%;
     display: flex;
@@ -13,12 +13,14 @@ header {
     flex-wrap: wrap;
     justify-content: space-around;
     z-index: 2;
+    background-image: linear-gradient(to right, #1DD3B0, #F3F9D2);
 }
 
 header > h1 {
     font-family: 'Permanent Marker', cursive;
     font-size: 2.5em;
     margin: 15px 0 10px 0;
+    color: #63264A;
 
 }
 
