@@ -197,12 +197,17 @@ form {
     background-color: #FF5A14;
 }
 
-.modal-gif-container {
-
+.modal-img {
+    margin: 50px auto;
 }
 
 /* min-width 600px */
 @media (min-width: 600px) {
+    #modal {
+        width: 400px;
+        left: 20%;
+    }
+
     .search {
         height: 25px;
         margin: auto 0;
@@ -233,6 +238,10 @@ form {
 
 /* min-width 700px */
 @media (min-width: 700px) {
+    #modal {
+        left: 25%;
+    }
+
     .main-container {
         flex-direction: row;
         flex-wrap: wrap;
@@ -252,6 +261,10 @@ form {
 
 /* min-width 1000px */
 @media (min-width: 1000px) {
+    #modal {
+        width: 600px;
+    }
+
     .search {
         height: 40px;
     }
@@ -300,6 +313,9 @@ form {
 
 /* min-width 1900px */
 @media (min-width: 1900px) {
+    #modal {
+        left: 33%;
+    }
     .main-container {
         justify-content: center;
         margin: auto;

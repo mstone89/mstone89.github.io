@@ -106,6 +106,7 @@ $(() => {
             }
         }
         const $favedGif = $(event.currentTarget).parent().parent().children().eq(1).clone().appendTo('#fave-gifs');
+        $favedGif.addClass('modal-img');
         const $imageSource = $favedGif.attr('src');
         copyGifUrl($imageSource);
         populateStorage();
