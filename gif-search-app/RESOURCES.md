@@ -14,3 +14,6 @@ https://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
 
 <!-- Helped with understanding local storage -->
 https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+<!-- Helped with infinite scrolling -->
+https://stackoverflow.com/questions/30329703/run-jquery-based-on-distance-from-bottom-of-window
