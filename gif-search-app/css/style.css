@@ -208,8 +208,8 @@ form {
         margin: auto 0;
     }
 
-    .random-button {
-
+    .random-button, #fav-button {
+        height: 27px;
     }
 
     .main-container {
@@ -251,6 +251,24 @@ form {
 
 /* min-width 1000px */
 @media (min-width: 1000px) {
+    .search {
+        height: 40px;
+    }
+
+    .searchbar {
+        width: 275px;
+        height: 40px;
+    }
+
+    .submit-button, .random-button, #fav-button {
+        width: 100px;
+        font-size: .75em;
+    }
+
+    .random-button, #fav-button {
+        height: 40px;
+    }
+
     .main-container {
         flex-direction: row;
         flex-wrap: wrap;
