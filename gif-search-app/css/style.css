@@ -54,7 +54,7 @@ form {
 }
 
 #fav-button {
-    color: orange;
+    color: #FF5A14;
     cursor: pointer;
 }
 
@@ -63,7 +63,7 @@ form {
     flex-direction: column;
     /* keeps main content from being blocked by sticky header */
     padding-top: 110px;
-    background-color: #3D0B37;
+    background-color: #33092E;
     height: 100%;
 }
 
@@ -78,6 +78,7 @@ form {
     border-radius: 10px;
     /* may need this for modal priority */
     z-index: 1;
+    border: 3px solid #B7F0AD;
 }
 
 .gif-header {
@@ -87,6 +88,7 @@ form {
     width: 100%;
     font-family: 'Source Sans Pro';
     font-size: .75em;
+    background-image: linear-gradient(#B7F0AD, white);
 }
 
 .gif-title {
@@ -95,7 +97,7 @@ form {
 }
 
 .star {
-    color: orange;
+    color: #FF5A14;
     display: inline;
     cursor: pointer;
     padding: 0 .5em 0 0;
