@@ -16,7 +16,11 @@ header {
 }
 
 header > h1 {
+    font-family: 'Permanent Marker', cursive;
+}
 
+header > h1 > span {
+    font-size: 25px;
 }
 
 body {
@@ -53,7 +57,9 @@ form {
     display: flex;
     flex-direction: column;
     /* keeps main content from being blocked by sticky header */
-    padding-top: 125px;
+    padding-top: 110px;
+    background-color: #3D0B37;
+    height: 100%;
 }
 
 .gif-container {
@@ -167,7 +173,6 @@ form {
         margin: auto;
         width: 66%;
         padding-top: 117px;
-        background-color: darkgray;
     }
     .gif-container {
         margin: 20px;
@@ -181,7 +186,6 @@ form {
         margin: auto;
         width: 72%;
         padding-top: 117px;
-        background-color: darkgray;
     }
     .gif-container {
         margin: 20px;
