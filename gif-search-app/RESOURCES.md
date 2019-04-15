@@ -11,3 +11,6 @@ https://www.w3schools.com/css/css_align.asp
 
 <!-- Helped with getting the modal to overlay over added elements -->
 https://tympanus.net/codrops/2013/11/07/css-overlay-techniques/
+
+<!-- Helped with understanding local storage -->
+https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
