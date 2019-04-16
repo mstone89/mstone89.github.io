@@ -1,6 +1,17 @@
 $(() => {
     // =========================
-    // variables
+    // API variables
+    // =========================
+
+    const host = 'https://api.giphy.com';
+    const searchPath = '/v1/gifs/search';
+    const randomPath = '/v1/gifs/random';
+    const apiKey = 'pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P';
+    const ratingG = 'g';
+    const initialLimit = 10;
+
+    // =========================
+    // element variables
     // =========================
 
     const $mainContainer = $('.main-container');
@@ -132,6 +143,8 @@ $(() => {
         }
     }
 
+
+
     // =========================
     // event listeners
     // =========================
@@ -150,14 +163,14 @@ $(() => {
 
         // get data based on user input. current results limited to 50 for now
         let dataUrl = $.get(
-            "https://api.giphy.com/v1/gifs/search?q=" + $userInput + "&api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P&limit=25"
+            `${host}${searchPath}?q=${$userInput}&api_key=${apiKey}&limit=${initialLimit}`
         );
         dataUrl.done(
             (data) => {
                 console.log('data successfully pulled', data);
                 // if no userdata, do nothing, throw no errors, else render data on page
                 if ($userInput !== '') {
-                    renderData(25, data, $userInput);
+                    renderData(initialLimit, data, $userInput);
                 }
                 $('.gif-image').on('click', (event) => {
                     const $imageSource = $(event.currentTarget).attr('src');
@@ -173,7 +186,7 @@ $(() => {
         $mainContainer.empty();
 
         let dataUrl = $.get(
-            "https://api.giphy.com/v1/gifs/random?api_key=pdUgvuVVPEs9PdIYiNuPW8HrZYpNBm1P"
+            `${host}${randomPath}?api_key=${apiKey}&rating=${ratingG}`
         );
         dataUrl.done(
             (data) => {
