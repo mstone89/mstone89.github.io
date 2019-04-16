@@ -162,7 +162,7 @@ form {
     position: absolute;
     top: 50%;
     bottom: 50%;
-    transform: translate(110%, -50%);
+    margin: auto 35%;
     font-family: 'Source Sans Pro';
 }
 

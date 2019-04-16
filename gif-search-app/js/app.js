@@ -127,9 +127,8 @@ $(() => {
     }
 
     const showCopyText = () => {
-        const $text = $('<p>').text('click to copy link').addClass('copy-text');
-        console.log($text);
-        $(event.currentTarget).parent().append($text);
+        const $copyTextDiv = $('<div>').text('click to copy link').addClass('copy-text');
+        $(event.currentTarget).parent().append($copyTextDiv);
     }
 
     const hideCopyText = () => {
@@ -166,6 +165,7 @@ $(() => {
                 $('.gif-image').on('click', (event) => {
                     const $imageSource = $(event.currentTarget).attr('src');
                     copyGifUrl($imageSource);
+                    $('.copy-text').text('link copied');
                 });
 
                 $('.gif-image').hover(showCopyText, hideCopyText);
@@ -189,7 +189,11 @@ $(() => {
                 $('.gif-image').on('click', (event) => {
                     const $imageSource = $(event.currentTarget).attr('src');
                     copyGifUrl($imageSource);
+                    $('.copy-text').text('link copied');
                 });
+
+                $('.gif-image').hover(showCopyText, hideCopyText);
+
                 $('.star').on('click', favoriteGif);
             }
         )
