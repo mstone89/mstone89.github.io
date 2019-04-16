@@ -317,6 +317,10 @@ form {
 
 /* min-width 1600px */
 @media (min-width: 1600px) {
+    #modal {
+        left: 33%;
+    }
+    
     .main-container {
         justify-content: center;
         margin: auto;
@@ -333,6 +337,7 @@ form {
     #modal {
         left: 33%;
     }
+
     .main-container {
         justify-content: center;
         margin: auto;
