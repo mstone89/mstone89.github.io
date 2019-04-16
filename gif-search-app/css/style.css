@@ -160,9 +160,10 @@ form {
 
 .copy-text {
     position: absolute;
-    top: 45%;
-    bottom: 45%;
-    transform: translate(85%, 85%);
+    top: 50%;
+    bottom: 50%;
+    transform: translate(110%, -50%);
+    font-family: 'Source Sans Pro';
 }
 
 /* Modal overlay, used to cover up elements with transparent color */
