@@ -8,10 +8,10 @@ html {
     height: 100%;
     background: repeating-linear-gradient(
         135deg,
-        #F3F9D2,
-        #F3F9D2 .25em,
+        #e8e8ea,
+        #e8e8ea .1em,
         white 0,
-        white .75em
+        white .5em
     );
 }
 
@@ -159,7 +159,7 @@ form {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(51, 9, 46, 0.5);
+    background-color: rgba(35, 30, 90, 0.6);
     z-index: 10;
 }
 
@@ -320,7 +320,7 @@ form {
     #modal {
         left: 33%;
     }
-    
+
     .main-container {
         justify-content: center;
         margin: auto;
