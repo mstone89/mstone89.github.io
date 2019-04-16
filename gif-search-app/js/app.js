@@ -34,37 +34,20 @@ $(() => {
             const $divHeader = $('<div>').addClass('gif-header');
             const $divGifTitle = $('<div>').addClass('gif-title');
             const $htmlStar = $('<div>').html('&#x2605;').addClass('star');
-            if (apiData.data[i].title === ' ' || apiData.data[i].title === '') {
-                $divGifTitle.text(userInput + ' GIF');
+            let $gif;
+            if (limit === 1) {
+                $gif = $('<img>').attr('src', apiData.data.images.original.url).addClass('gif-image');
+                $divGifTitle.text(apiData.data.title);
             } else {
+                $gif = $('<img>').attr('src', apiData.data[i].images.original.url).addClass('gif-image');
                 $divGifTitle.text(apiData.data[i].title);
             }
-            const $gif = $('<img>').attr('src', apiData.data[i].images.original.url).addClass('gif-image');
             $divHeader.append($divGifTitle);
             $divHeader.append($htmlStar);
             $divGif.append($divHeader);
             $divGif.append($gif);
             $mainContainer.append($divGif);
         }
-    }
-
-    // create and append gif, title, etc. after clicking on random button
-    const addRandomGif = (apiData) => {
-        const $divGif = $('<div>').addClass('gif-container');
-        const $divHeader = $('<div>').addClass('gif-header');
-        const $divGifTitle = $('<div>').addClass('gif-title');
-        const $htmlStar = $('<div>').html('&#x2605;').addClass('star');
-        if (apiData.data.title === ' ' || apiData.data.title === '') {
-            $divGifTitle.text('random GIF');
-        } else {
-            $divGifTitle.text(apiData.data.title);
-        }
-        const $gif = $('<img>').attr('src', apiData.data.images.original.url).addClass('gif-image');
-        $divHeader.append($divGifTitle);
-        $divHeader.append($htmlStar);
-        $divGif.append($divHeader);
-        $divGif.append($gif);
-        $mainContainer.append($divGif);
     }
 
     // copy gif link function
@@ -143,8 +126,6 @@ $(() => {
         }
     }
 
-
-
     // =========================
     // event listeners
     // =========================
@@ -161,7 +142,7 @@ $(() => {
         event.preventDefault();
         $(event.currentTarget).trigger('reset');
 
-        // get data based on user input. current results limited to 50 for now
+        // get data based on user input
         let dataUrl = $.get(
             `${host}${searchPath}?q=${$userInput}&api_key=${apiKey}&limit=${initialLimit}`
         );
@@ -191,7 +172,7 @@ $(() => {
         dataUrl.done(
             (data) => {
                 console.log('random gif successfully pulled', data);
-                addRandomGif(data);
+                renderData(1, data);
                 $('.gif-image').on('click', (event) => {
                     const $imageSource = $(event.currentTarget).attr('src');
                     copyGifUrl($imageSource);
