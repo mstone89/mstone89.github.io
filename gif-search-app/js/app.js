@@ -194,7 +194,11 @@ $(() => {
                                 $('.gif-image').on('click', (event) => {
                                     const $imageSource = $(event.currentTarget).attr('src');
                                     copyGifUrl($imageSource);
+                                    $('.copy-text').text('link copied');
                                 });
+
+                                $('.gif-image').hover(showCopyText, hideCopyText);
+
                                 $('.star').on('click', favoriteGif);
                         });
                         offset += 10;
