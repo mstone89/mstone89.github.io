@@ -4,7 +4,7 @@
     border: 1px solid orange;
 } */
 
-html {
+/* html {
     height: 100%;
     background: repeating-linear-gradient(
         135deg,
@@ -13,7 +13,7 @@ html {
         white 0,
         white .5em
     );
-}
+} */
 
 header {
     /* background-color: #E55000; */
@@ -149,6 +149,7 @@ form {
     /* Gifs are set to original sizing, so largest possible size, for all devices. This allows the image to be scaled down to fit the container for mobile */
     max-width: 100%;
     max-height: 175px;
+    cursor: pointer;
 }
 
 /* Modal overlay, used to cover up elements with transparent color */

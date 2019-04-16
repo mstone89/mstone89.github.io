@@ -157,6 +157,7 @@ $(() => {
                     const $imageSource = $(event.currentTarget).attr('src');
                     copyGifUrl($imageSource);
                 });
+
                 $('.star').on('click', favoriteGif);
         });
     });
