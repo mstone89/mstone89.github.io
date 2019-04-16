@@ -126,6 +126,16 @@ $(() => {
         }
     }
 
+    const showCopyText = () => {
+        const $text = $('<p>').text('click to copy link').addClass('copy-text');
+        console.log($text);
+        $(event.currentTarget).parent().append($text);
+    }
+
+    const hideCopyText = () => {
+        $('.copy-text').remove();
+    }
+
     // =========================
     // event listeners
     // =========================
@@ -157,6 +167,8 @@ $(() => {
                     const $imageSource = $(event.currentTarget).attr('src');
                     copyGifUrl($imageSource);
                 });
+
+                $('.gif-image').hover(showCopyText, hideCopyText);
 
                 $('.star').on('click', favoriteGif);
         });

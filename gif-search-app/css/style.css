@@ -117,6 +117,8 @@ form {
     /* may need this for modal priority */
     z-index: 1;
     border: 3px solid #B7F0AD;
+    position: relative;
+    text-align: center;
 }
 
 .gif-header {
@@ -150,6 +152,17 @@ form {
     max-width: 100%;
     max-height: 175px;
     cursor: pointer;
+}
+
+.gif-image:hover {
+    opacity: .5;
+}
+
+.copy-text {
+    position: absolute;
+    top: 45%;
+    bottom: 45%;
+    transform: translate(85%, 85%);
 }
 
 /* Modal overlay, used to cover up elements with transparent color */
