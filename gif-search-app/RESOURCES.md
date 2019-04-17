@@ -20,3 +20,8 @@ https://stackoverflow.com/questions/30329703/run-jquery-based-on-distance-from-b
 
 <!-- Helped setting up tooltips -->
 https://www.w3schools.com/howto/howto_css_tooltip.asp
+
+<!-- Notes on window.location.hash -->
+https://developer.mozilla.org/en-US/docs/Web/API/Window/location
+https://stackoverflow.com/questions/298503/how-can-you-check-for-a-hash-in-a-url-using-javascript
+https://www.w3schools.com/jsref/met_loc_replace.asp
