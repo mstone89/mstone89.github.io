@@ -231,6 +231,8 @@ $(() => {
         )
     });
 
+
+
     // event listeners for opening/closing favorites modal
     $openFavesBtn.on('click', openFavesModal);
     $closeFavesBtn.on('click', closeFavesModal);

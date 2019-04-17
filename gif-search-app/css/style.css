@@ -214,7 +214,6 @@ form:hover .tooltip-text {
     margin: auto 35%;
     font-family: 'Source Sans Pro';
 }
-
 /* Modal overlay, used to cover up elements with transparent color */
 #overlay {
     display: none;
@@ -244,6 +243,9 @@ form:hover .tooltip-text {
 #modal-header {
     background-image: linear-gradient(to right, #1DD3B0, #F3F9D2);
     border-bottom: 2px solid #1D1A31;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #modal-header > h1 {
@@ -253,6 +255,15 @@ form:hover .tooltip-text {
     margin: 0;
     text-align: center;
 }
+
+/* .copy-gifs-url {
+    margin: 10px auto;
+    font-family: 'Source Sans Pro';
+    background-color: #63264A;
+    color: #F3F9D2;
+    border: none;
+} */
+
 
 #modal-footer {
     display: flex;
