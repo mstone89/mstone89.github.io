@@ -54,9 +54,20 @@ button {
     justify-content: space-around;
 }
 
+.tooltip-text {
+    position: absolute;
+    visibility: hidden;
+    z-index: 10;
+    background-color: black;
+    color: white;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
 form {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .searchbar {
@@ -80,6 +91,7 @@ form {
     background-color: #63264A;
     color: #F3F9D2;
     border: none;
+    position: relative;
 }
 
 #fav-button {
@@ -94,6 +106,22 @@ form {
     color: #1D1A31;
     display: inline;
     cursor: pointer;
+}
+
+/* tooltips on hover */
+form:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.random-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+#fav-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 .main-container {
