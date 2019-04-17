@@ -126,6 +126,22 @@ form:hover .tooltip-text {
 #tooltip-search, #tooltip-random, #tooltip-faves {
     background-color: black;
     color: white;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+#tooltip-search {
+    transform: translate(65px, -20px);
+}
+
+#tooltip-random {
+    width: 80px;
+    transform: translate(-60px, -27px);
+}
+
+#tooltip-faves {
+    width: 80px;
+    transform: translate(-60px, -27px);
 }
 
 .main-container {
