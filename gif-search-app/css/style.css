@@ -58,8 +58,7 @@ button {
     position: absolute;
     visibility: hidden;
     z-index: 10;
-    background-color: black;
-    color: white;
+    font-family: 'Source Sans Pro';
     opacity: 0;
     transition: opacity .3s;
 }
@@ -94,7 +93,7 @@ form {
     position: relative;
 }
 
-#fav-button {
+.fav-button {
     color: #FF5A14;
     cursor: pointer;
     width: 70px;
@@ -102,7 +101,7 @@ form {
     background-color: #1DD3B0;
 }
 
-#fav-button > span {
+.fav-button > span {
     color: #1D1A31;
     display: inline;
     cursor: pointer;
@@ -119,9 +118,14 @@ form:hover .tooltip-text {
     opacity: 1;
 }
 
-#fav-button:hover .tooltip-text {
+.fav-button:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+#tooltip-search, #tooltip-random, #tooltip-faves {
+    background-color: black;
+    color: white;
 }
 
 .main-container {
@@ -273,7 +277,7 @@ form:hover .tooltip-text {
         margin: auto 0;
     }
 
-    .random-button, #fav-button {
+    .random-button, .fav-button {
         height: 27px;
     }
 
@@ -335,12 +339,12 @@ form:hover .tooltip-text {
         padding-bottom: 0;
     }
 
-    .submit-button, .random-button, #fav-button {
+    .submit-button, .random-button, .fav-button {
         width: 100px;
         font-size: .75em;
     }
 
-    .random-button, #fav-button {
+    .random-button, .fav-button {
         height: 40px;
     }
 

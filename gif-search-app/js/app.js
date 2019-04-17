@@ -16,7 +16,7 @@ $(() => {
     // =========================
 
     const $mainContainer = $('.main-container');
-    const $openFavesBtn = $('#fav-button');
+    const $openFavesBtn = $('.fav-button');
     const $favesModal = $('#modal');
     const $overlay = $('#overlay');
     const $closeFavesBtn = $('#close-modal');
