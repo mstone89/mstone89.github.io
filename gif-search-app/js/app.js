@@ -136,16 +136,50 @@ $(() => {
         $('.copy-text').remove();
     }
 
+    const infiniteScroll = (userInput) => {
+        // infinite scrolling
+        $(document).scroll(() => {
+            console.log(userInput);
+            // document height: returns height of html document
+            // window height: returns height of browser viewpoint
+            // document scroll top: returns the current vertical position of the scroll bar for the html document
+            const distanceFromBottom = $(document).height() - $(document).scrollTop() - $(window).height();
+
+            if (distanceFromBottom < 200) {
+                let dataUrl = $.get(
+                    `${host}${searchPath}?q=${userInput}&api_key=${apiKey}&limit=${initialLimit}&offset=${offset}`
+                );
+                dataUrl.done(
+                    (data) => {
+                        console.log('data successfully pulled', data);
+                        // if no userdata, do nothing, throw no errors, else render data on page
+                        renderData(initialLimit, data, userInput);
+                        $('.gif-image').on('click', (event) => {
+                            const $imageSource = $(event.currentTarget).attr('src');
+                            copyGifUrl($imageSource);
+                            $('.copy-text').text('link copied');
+                        });
+
+                        $('.gif-image').hover(showCopyText, hideCopyText);
+
+                        $('.star').on('click', favoriteGif);
+                });
+                offset += 10;
+            }
+            // console.log($(window).height(), $(document).height(), $(document).scrollTop());
+        });
+    }
+
     // =========================
     // event listeners
     // =========================
 
     // event listener for user keyword input on form submission
     $('form').on('submit', (event) => {
-
+        // removes old event listener from the document so it doesn't scroll on multiple search terms.
+        $(document).off();
         // grab user input keyword data
         let $userInput = $('input[type="text"]').val();
-
         // empty previous items from main div. keep page from reloading on form submission
         // reset form submission to be default (blank)
         $mainContainer.empty();
@@ -173,39 +207,10 @@ $(() => {
 
                 $('.star').on('click', favoriteGif);
 
-                // infinite scrolling
-                $(document).scroll($userInput, () => {
-                    // document height: returns height of html document
-                    // window height: returns height of browser viewpoint
-                    // document scroll top: returns the current vertical position of the scroll bar for the html document
-                    const distanceFromBottom = $(document).height() - $(document).scrollTop() - $(window).height();
-                    if (distanceFromBottom < 200) {
-                        let dataUrl = $.get(
-                            `${host}${searchPath}?q=${$userInput}&api_key=${apiKey}&limit=${initialLimit}&offset=${offset}`
-                        );
-                        dataUrl.done(
-                            (data) => {
-                                console.log('data successfully pulled', data);
-                                // if no userdata, do nothing, throw no errors, else render data on page
-                                if ($userInput !== '') {
-                                    renderData(initialLimit, data, $userInput);
-                                    // console.log(offset);
-                                }
-                                $('.gif-image').on('click', (event) => {
-                                    const $imageSource = $(event.currentTarget).attr('src');
-                                    copyGifUrl($imageSource);
-                                    $('.copy-text').text('link copied');
-                                });
-
-                                $('.gif-image').hover(showCopyText, hideCopyText);
-
-                                $('.star').on('click', favoriteGif);
-                        });
-                        offset += 10;
-                    }
-                    // console.log($(window).height(), $(document).height(), $(document).scrollTop());
-                });
         });
+
+        infiniteScroll($userInput);
+
     });
 
     // event listener for clicking random button, to display random gif
