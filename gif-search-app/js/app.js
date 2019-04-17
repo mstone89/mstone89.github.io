@@ -136,13 +136,25 @@ $(() => {
         $('.copy-text').remove();
     }
 
+    const addImageEvents = () => {
+        $('.gif-image').on('click', (event) => {
+            const $imageSource = $(event.currentTarget).attr('src');
+            copyGifUrl($imageSource);
+            $('.copy-text').text('link copied');
+        });
+
+        $('.gif-image').hover(showCopyText, hideCopyText);
+
+        $('.star').on('click', favoriteGif);
+    }
+
+    // infinite scrolling
+    // document height: returns height of html document
+    // window height: returns height of browser viewpoint
+    // document scroll top: returns the current vertical position of the scroll bar for the html document
     const infiniteScroll = (userInput) => {
-        // infinite scrolling
         $(document).scroll(() => {
-            console.log(userInput);
-            // document height: returns height of html document
-            // window height: returns height of browser viewpoint
-            // document scroll top: returns the current vertical position of the scroll bar for the html document
+
             const distanceFromBottom = $(document).height() - $(document).scrollTop() - $(window).height();
 
             if (distanceFromBottom < 200) {
@@ -154,19 +166,10 @@ $(() => {
                         console.log('data successfully pulled', data);
                         // if no userdata, do nothing, throw no errors, else render data on page
                         renderData(initialLimit, data, userInput);
-                        $('.gif-image').on('click', (event) => {
-                            const $imageSource = $(event.currentTarget).attr('src');
-                            copyGifUrl($imageSource);
-                            $('.copy-text').text('link copied');
-                        });
-
-                        $('.gif-image').hover(showCopyText, hideCopyText);
-
-                        $('.star').on('click', favoriteGif);
+                        addImageEvents();
                 });
                 offset += 10;
             }
-            // console.log($(window).height(), $(document).height(), $(document).scrollTop());
         });
     }
 
@@ -178,8 +181,10 @@ $(() => {
     $('form').on('submit', (event) => {
         // removes old event listener from the document so it doesn't scroll on multiple search terms.
         $(document).off();
+
         // grab user input keyword data
         let $userInput = $('input[type="text"]').val();
+
         // empty previous items from main div. keep page from reloading on form submission
         // reset form submission to be default (blank)
         $mainContainer.empty();
@@ -197,16 +202,7 @@ $(() => {
                 if ($userInput !== '') {
                     renderData(initialLimit, data, $userInput);
                 }
-                $('.gif-image').on('click', (event) => {
-                    const $imageSource = $(event.currentTarget).attr('src');
-                    copyGifUrl($imageSource);
-                    $('.copy-text').text('link copied');
-                });
-
-                $('.gif-image').hover(showCopyText, hideCopyText);
-
-                $('.star').on('click', favoriteGif);
-
+                addImageEvents();
         });
 
         infiniteScroll($userInput);
@@ -215,6 +211,7 @@ $(() => {
 
     // event listener for clicking random button, to display random gif
     $('.random-button').on('click', (event) => {
+
         // empty previous items from main div.
         $mainContainer.empty();
 
@@ -225,15 +222,7 @@ $(() => {
             (data) => {
                 console.log('random gif successfully pulled', data);
                 renderData(1, data);
-                $('.gif-image').on('click', (event) => {
-                    const $imageSource = $(event.currentTarget).attr('src');
-                    copyGifUrl($imageSource);
-                    $('.copy-text').text('link copied');
-                });
-
-                $('.gif-image').hover(showCopyText, hideCopyText);
-
-                $('.star').on('click', favoriteGif);
+                addImageEvents();
             }
         )
     });
