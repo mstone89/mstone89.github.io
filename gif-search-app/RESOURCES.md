@@ -17,3 +17,6 @@ https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 
 <!-- Helped with infinite scrolling -->
 https://stackoverflow.com/questions/30329703/run-jquery-based-on-distance-from-bottom-of-window
+
+<!-- Helped setting up tooltips -->
+https://www.w3schools.com/howto/howto_css_tooltip.asp
