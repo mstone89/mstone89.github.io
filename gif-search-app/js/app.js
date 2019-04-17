@@ -101,7 +101,8 @@ $(() => {
             }
         }
         const $favedGif = $(event.currentTarget).parent().parent().children().eq(1);
-        $favedGif.clone().addClass('modal-img').appendTo('#fave-gifs');
+        const $modalGif = $favedGif.clone().appendTo('#fave-gifs');
+        $modalGif.addClass('modal-gif');
         const $imageSource = $favedGif.attr('src');
         copyGifUrl($imageSource);
         populateStorage();
@@ -121,13 +122,16 @@ $(() => {
         if (localStorage.length > 0) {
             for (let i = 0; i < localStorage.length; i++) {
                 // console.log(localStorage);
-                const $gif = $('<img>').attr('src', localStorage.getItem('src-' + i)).addClass('gif-image');
+                const $gif = $('<img>').attr('src', localStorage.getItem('src-' + i)).addClass('gif-image').addClass('modal-gif');
                 $('#fave-gifs').append($gif);
             }
         }
     }
 
     const showCopyText = () => {
+        if ($(event.currentTarget).parent().attr('id') === 'fave-gifs') {
+            return;
+        }
         const $copyTextDiv = $('<div>').text('click to copy link').addClass('copy-text');
         $(event.currentTarget).parent().append($copyTextDiv);
     }

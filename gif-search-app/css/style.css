@@ -200,6 +200,7 @@ form:hover .tooltip-text {
     max-width: 100%;
     max-height: 175px;
     cursor: pointer;
+    position: relative;
 }
 
 .gif-image:hover {
