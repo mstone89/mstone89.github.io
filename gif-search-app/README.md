@@ -14,6 +14,18 @@ This app was built with:
 
 AJAX request is made through the [GIPHY API](https://developers.giphy.com/).
 
+## App Features
+
+- Search for gif by keyword
+- Copy gif to clipboard URL on click
+- Store favorite gifs on click in separate modal
+- Favorite gifs are stored in local storage and will remain in favorites on page refresh
+- Favorites can be removed from local storage
+- Top header is sticky so user doesn't have to scroll back to the top for new search
+- Copy unique gif favorites URL to clipboard to share with other users
+- Gifs are loaded on page through infinite scroll; a new AJAX request for more results occurs when the user scrolls down a certain amount
+- Site is responsive for multiple screen sizes
+
 ## Approach
 
 - First worked on acquiring data from the API correctly.
@@ -23,3 +35,14 @@ AJAX request is made through the [GIPHY API](https://developers.giphy.com/).
 - Testing page on multiple screen sizes to get it responsive, added styling as needed.
 - Once page was put together, worked on adding more advanced functionality: infinite scroll, sticky header/nav, ability for user to copy gif links to clipboard, adding gifs to favorites.
 - After a lot of testing, finally added a way for the user to share gifs through a unique URl.
+
+## Challenges/Unsolved Problems
+
+- Getting the close/remove all button to be in a sticky footer in modal. I couldn't get this to work properly.
+
+## Future Improvements
+
+- Add option to individually remove gifs from favorites (only way to remove gifs from favorites is to remove all of them)
+- Additional user feedback: change star color when clicked to indicate that a gif is favorited, show a tooptip over star buttons to indicate that it's a way to favorite gifs.
+- Make it so that the random button displays multiple random gifs.
+- Have the close/remove all buttons in the modal show in a sticky footer, so they are visible at all times.
