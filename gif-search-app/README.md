@@ -49,4 +49,4 @@ AJAX request is made through the [GIPHY API](https://developers.giphy.com/).
 
 ## Resources
 
-See the RESOURCES.md for details on sources used to create this project.
+See the [RESOURCES.md](https://github.com/mstone89/mstone89.github.io/blob/master/gif-search-app/RESOURCES.md) for details on sources used to create this project.
