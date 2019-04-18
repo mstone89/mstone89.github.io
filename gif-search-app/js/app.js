@@ -55,8 +55,8 @@ $(() => {
     // creates a temporary input element, the value of which becomes the image url passed to the function
     // appends temporary input to body, selects the input, copies it, then removes the input,
     // allowing the url to be copied
-    const copyGifUrl = (imageSource) => {
-        const $tempInput = $('<input>').val(imageSource);
+    const copyUrl = (input) => {
+        const $tempInput = $('<input>').val(input);
         $('body').append($tempInput);
         $tempInput.select();
         document.execCommand('copy');
@@ -105,7 +105,7 @@ $(() => {
         $modalGif.attr('id', $(event.currentTarget).attr('id'));
         $('.gif-image').on('click', (event) => {
             const $imageSource = $(event.currentTarget).attr('src');
-            copyGifUrl($imageSource);
+            copyUrl($imageSource);
         });
         populateStorage();
     }
@@ -146,7 +146,7 @@ $(() => {
     const addImageEvents = () => {
         $('.gif-image').on('click', (event) => {
             const $imageSource = $(event.currentTarget).attr('src');
-            copyGifUrl($imageSource);
+            copyUrl($imageSource);
             $('.copy-text').text('link copied');
         });
 
@@ -274,7 +274,7 @@ $(() => {
             // remove last character. start at index 0, move backwards to the last part of the string
             window.location.hash = window.location.hash.slice(0, -1);
         }
-        console.log(window.location.hash);
+        copyUrl('https://mstone89.github.io/gif-search-app/' + window.location.hash);
     });
 
     // event listeners for opening/closing favorites modal
