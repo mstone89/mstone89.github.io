@@ -212,6 +212,10 @@ form:hover .tooltip-text {
     cursor: pointer;
 }
 
+.star:active {
+    color: #63264A;
+}
+
 .gif-image {
     display: block;
     margin: 0 auto;

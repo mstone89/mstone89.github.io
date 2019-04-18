@@ -28,7 +28,6 @@ $(() => {
     // =========================
 
     // render data function
-    //// if a title is unavailable, add keyword search text as title
     const renderData = (limit, apiData, userInput) => {
         for (let i = 0; i < limit; i++) {
             const $divGif = $('<div>').addClass('gif-container');
