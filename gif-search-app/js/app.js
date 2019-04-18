@@ -284,6 +284,9 @@ $(() => {
     $closeFavesBtn.on('click', closeFavesModal);
     $clearFavesBtn.on('click', clearFavesModal);
 
+    // add back locally stored gifs to favorites modal
     repopulateFavorites();
+
+    // if page has hash anchor in the url, load the page with the embedded gifs
     loadPageWithHash();
 });
