@@ -46,3 +46,7 @@ AJAX request is made through the [GIPHY API](https://developers.giphy.com/).
 - Additional user feedback: change star color when clicked to indicate that a gif is favorited, show a tooptip over star buttons to indicate that it's a way to favorite gifs.
 - Make it so that the random button displays multiple random gifs.
 - Have the close/remove all buttons in the modal show in a sticky footer, so they are visible at all times.
+
+## Resources
+
+See the RESOURCES.md for details on sources used to create this project.
