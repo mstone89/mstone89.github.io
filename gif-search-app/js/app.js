@@ -217,6 +217,8 @@ $(() => {
     // event listener for clicking random button, to display random gif
     $('.random-button').on('click', (event) => {
 
+        $(document).off();
+        
         // empty previous items from main div.
         $mainContainer.empty();
 
