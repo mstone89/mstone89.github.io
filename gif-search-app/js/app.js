@@ -55,6 +55,7 @@ $(() => {
     // creates a temporary input element, the value of which becomes the image url passed to the function
     // appends temporary input to body, selects the input, copies it, then removes the input,
     // allowing the url to be copied
+    // line 1 in RESOURCES.md
     const copyUrl = (input) => {
         const $tempInput = $('<input>').val(input);
         $('body').append($tempInput);
@@ -110,6 +111,7 @@ $(() => {
         populateStorage();
     }
 
+    // line 28 in RESOURCES.md
     // save favorited gifs in local storage
     const populateStorage = () => {
         const $appendedGifs = $('#fave-gifs').children();
@@ -155,7 +157,7 @@ $(() => {
         $('.star').on('click', favoriteGif);
     }
 
-    // infinite scrolling
+    // infinite scrolling: line 37 in RESOURCES.md
     // document height: returns height of html document
     // window height: returns height of browser viewpoint
     // document scroll top: returns the current vertical position of the scroll bar for the html document
@@ -264,6 +266,7 @@ $(() => {
     });
 
     // grab ids on click, store them in location.hash
+    // line 53 in RESOURCES.md
     $('.copy-gifs-url').on('click', (event) => {
         window.location.hash = '';
         if ($('#fave-gifs').children().length > 0) {

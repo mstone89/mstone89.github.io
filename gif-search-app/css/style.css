@@ -21,6 +21,7 @@
 }
 
 header {
+    /* line 10 in RESOURCES.md */
     /* background-color: #E55000; */
     position: fixed;
     width: 100%;
@@ -60,6 +61,7 @@ button {
     justify-content: space-around;
 }
 
+/* line 45 in RESOURCES.md */
 .tooltip-text {
     position: absolute;
     visibility: hidden;
