@@ -195,6 +195,11 @@ $(() => {
                         addImageEvents();
                     });
             }
+            const $closeShared = $('<button>').text('close shared gifs').addClass('close-shared');
+            $('.wrapper').append($closeShared);
+            $closeShared.on('click', () => {
+                location.assign('https://mstone89.github.io/gif-search-app/');
+            });
         }
     }
 

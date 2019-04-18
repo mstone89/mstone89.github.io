@@ -15,6 +15,11 @@
     );
 } */
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     /* background-color: #E55000; */
     position: fixed;
@@ -122,6 +127,17 @@ form:hover .tooltip-text {
 .fav-button:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+}
+
+.close-shared {
+    color: #F3F9D2;
+    cursor: pointer;
+    border: none;
+    background-color: #63264A;
+    font-family: 'Source Sans Pro';
+    margin: 10px auto;
+    font-size: 15px;
+    width: 150px;
 }
 
 #tooltip-search, #tooltip-random, #tooltip-faves {
