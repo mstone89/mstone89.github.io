@@ -254,6 +254,10 @@ $(() => {
         )
     });
 
+    $('.logo').on('click', () => {
+        location.assign('https://mstone89.github.io/gif-search-app/');
+    });
+
     // grab ids on click, store them in location.hash
     $('.copy-gifs-url').on('click', (event) => {
         window.location.hash = '';
