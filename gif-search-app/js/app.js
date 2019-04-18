@@ -102,9 +102,10 @@ $(() => {
         }
         const $favedGif = $(event.currentTarget).parent().parent().children().eq(1);
         const $modalGif = $favedGif.clone().appendTo('#fave-gifs');
-        $modalGif.addClass('modal-gif');
-        const $imageSource = $favedGif.attr('src');
-        copyGifUrl($imageSource);
+        $('.gif-image').on('click', (event) => {
+            const $imageSource = $(event.currentTarget).attr('src');
+            copyGifUrl($imageSource);
+        });
         populateStorage();
     }
 
