@@ -37,10 +37,10 @@ $(() => {
             const $htmlStar = $('<div>').html('&#x2605;').addClass('star');
             let $gif;
             if (limit === 1) {
-                $gif = $('<img>').attr('src', apiData.data.images.original.url).addClass('gif-image');
+                $gif = $('<img>').attr('src', apiData.data.images.original.url).addClass('gif-image').attr('id', apiData.data.id);
                 $divGifTitle.text(apiData.data.title);
             } else {
-                $gif = $('<img>').attr('src', apiData.data[i].images.original.url).addClass('gif-image');
+                $gif = $('<img>').attr('src', apiData.data[i].images.original.url).addClass('gif-image').attr('id', apiData.data[i].id);
                 $divGifTitle.text(apiData.data[i].title);
             }
             $divHeader.append($divGifTitle);
@@ -102,6 +102,7 @@ $(() => {
         }
         const $favedGif = $(event.currentTarget).parent().parent().children().eq(1);
         const $modalGif = $favedGif.clone().appendTo('#fave-gifs');
+        $modalGif.attr('id', $(event.currentTarget).attr('id'));
         $('.gif-image').on('click', (event) => {
             const $imageSource = $(event.currentTarget).attr('src');
             copyGifUrl($imageSource);
@@ -122,8 +123,9 @@ $(() => {
     const repopulateFavorites = () => {
         if (localStorage.length > 0) {
             for (let i = 0; i < localStorage.length; i++) {
-                // console.log(localStorage);
-                const $gif = $('<img>').attr('src', localStorage.getItem('src-' + i)).addClass('gif-image').addClass('modal-gif');
+                let id = localStorage.getItem('src-' + i).slice(0, -10)
+                id = id.slice(id.lastIndexOf('/') + 1);
+                const $gif = $('<img>').attr('src', localStorage.getItem('src-' + i)).addClass('gif-image').attr('id', id);
                 $('#fave-gifs').append($gif);
             }
         }
@@ -178,6 +180,24 @@ $(() => {
         });
     }
 
+    const loadPageWithHash = () => {
+        if (window.location.hash) {
+            let hashIds = window.location.hash.substring(1).split('-');
+            console.log(hashIds);
+            for (let i = 0; i < hashIds.length; i++) {
+                console.log(hashIds[i]);
+                let dataUrl = $.get(
+                    `${host}/v1/gifs/${hashIds[i]}?&api_key=${apiKey}`
+                );
+                dataUrl.done(
+                    (data) => {
+                        renderData(1, data);
+                        addImageEvents();
+                    });
+            }
+        }
+    }
+
     // =========================
     // event listeners
     // =========================
@@ -218,7 +238,7 @@ $(() => {
     $('.random-button').on('click', (event) => {
 
         $(document).off();
-        
+
         // empty previous items from main div.
         $mainContainer.empty();
 
@@ -234,7 +254,19 @@ $(() => {
         )
     });
 
-
+    // grab ids on click, store them in location.hash
+    $('.copy-gifs-url').on('click', (event) => {
+        window.location.hash = '';
+        if ($('#fave-gifs').children().length > 0) {
+            const $children = $('#fave-gifs').children();
+            for (let i = 0; i < $('#fave-gifs').children().length; i++) {
+                window.location.hash += $($children[i]).attr('id') + '-';
+            }
+            // remove last character. start at index 0, move backwards to the last part of the string
+            window.location.hash = window.location.hash.slice(0, -1);
+        }
+        console.log(window.location.hash);
+    });
 
     // event listeners for opening/closing favorites modal
     $openFavesBtn.on('click', openFavesModal);
@@ -242,4 +274,5 @@ $(() => {
     $clearFavesBtn.on('click', clearFavesModal);
 
     repopulateFavorites();
+    loadPageWithHash();
 });

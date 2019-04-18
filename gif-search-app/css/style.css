@@ -256,13 +256,13 @@ form:hover .tooltip-text {
     text-align: center;
 }
 
-/* .copy-gifs-url {
+.copy-gifs-url {
     margin: 10px auto;
     font-family: 'Source Sans Pro';
     background-color: #63264A;
     color: #F3F9D2;
     border: none;
-} */
+}
 
 
 #modal-footer {
