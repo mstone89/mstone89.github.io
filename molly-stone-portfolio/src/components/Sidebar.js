@@ -10,18 +10,27 @@ class Sidebar extends Component {
         return (
             <div>
                 <Router>
-                    <Link to="/">
-                        <h1 className="logo">Molly Codes</h1>
-                    </Link>
-                    <Link to="/">
-                        <p>Projects</p>
-                    </Link>
-                    <Link to="/bio/">
-                        <p>Bio</p>
-                    </Link>
-                    <Link to="/resume/">
-                        <p>Resume</p>
-                    </Link>
+                    <header>
+                        <Link to="/">
+                            <h1 className="logo">Molly Codes</h1>
+                        </Link>
+                        <div className="social-media">
+                            <i class="fab fa-linkedin"></i>
+                            <i class="fab fa-github"></i>
+                            <i class="fab fa-medium"></i>
+                        </div>
+                        <nav>
+                            <Link to="/">
+                                <p>Projects</p>
+                            </Link>
+                            <Link to="/bio/">
+                                <p>Bio</p>
+                            </Link>
+                            <Link to="/resume/">
+                                <p>Resume</p>
+                            </Link>
+                        </nav>
+                    </header>
                     <Switch>
                         <Route exact path="/" component={Projects} />
                         <Route path="/bio/" component={Bio} />
