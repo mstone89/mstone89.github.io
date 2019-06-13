@@ -15,9 +15,9 @@ class Sidebar extends Component {
                             <h1 className="logo">Molly Codes</h1>
                         </Link>
                         <div className="social-media">
-                            <i class="fab fa-linkedin"></i>
-                            <i class="fab fa-github"></i>
-                            <i class="fab fa-medium"></i>
+                            <a href="https://www.linkedin.com/in/mollycstone/" rel="noopener noreferrer" target="_blank"><i className="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/mstone89/" rel="noopener noreferrer" target="_blank"><i className="fab fa-github"></i></a>
+                            <a href="https://medium.com/@molly.stone89" rel="noopener noreferrer" target="_blank"><i className="fab fa-medium"></i></a>
                         </div>
                         <nav>
                             <Link to="/">
@@ -37,7 +37,7 @@ class Sidebar extends Component {
                         <Route path="/resume/" component={Resume} />
                     </Switch>
                 </Router>
-                <footer>Copyright Molly Stone 2019</footer>
+                <footer><i className="far fa-copyright"></i> Molly Stone 2019</footer>
             </div>
         );
     }
