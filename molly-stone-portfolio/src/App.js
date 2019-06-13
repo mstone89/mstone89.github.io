@@ -1,8 +1,6 @@
-// Dependancies //
 import React, { Component } from 'react';
 import './App.css';
 
-// Components //
 import Sidebar from './components/Sidebar';
 
 class App extends Component {
