@@ -1,11 +1,14 @@
+// Dependancies //
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
+
+// Components //
+import Sidebar from './components/Sidebar';
 
 class App extends Component {
     render() {
         return (
-            <h1>Hello World</h1>
+            <Sidebar />
         )
     }
 }
