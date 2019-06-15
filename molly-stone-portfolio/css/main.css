@@ -81,3 +81,7 @@ img {
 .project-heading > h3 {
     margin: 0;
 }
+
+.hide {
+    display: none;
+}
