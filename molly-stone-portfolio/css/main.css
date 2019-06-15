@@ -26,6 +26,10 @@ nav > p {
     padding-right: .35em;
 }
 
+.social-media > a > i:active {
+    color: white;
+}
+
 .social-media {
     padding-bottom: .75em;
 }
@@ -77,7 +81,21 @@ img {
 }
 
 .git {
-    padding: 5px;
+    padding: 5px 0 ;
+}
+
+.bio {
+    margin: 2em;
+}
+
+.bio > h1 {
+    font-size: 2.5em;
+    font-family: 'Arsenal', sans-serif;
+    margin-bottom: 0;
+}
+
+.bio > p {
+    font-size: 1.25em;
 }
 
 .hide {
@@ -101,6 +119,10 @@ img {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    .bio > p {
+        font-size: 1.5em;
     }
 
     .hide {
@@ -129,12 +151,32 @@ img {
         cursor: pointer;
     }
 
+    .projects-link, .resume-link {
+        width: 65px;
+    }
+
+    .bio-link {
+        width: 20px;
+    }
+
+    nav > p:hover {
+        color: white;
+    }
+
+    nav > p:active {
+        color: white;
+    }
+
     .logo {
         font-size: 3em;
     }
 
     .social-media > a > i {
         padding-right: .5em;
+    }
+
+    .social-media > a > i:hover {
+        color: white;
     }
 
     .social-media {
@@ -171,6 +213,26 @@ img {
         margin: 20px;
         border-bottom: 1px solid #EBECED;
         border-bottom-left-radius: 5px;
+    }
+
+    .bio {
+        grid-column: span 2;
+        padding-top: 3.5em;
+    }
+
+    .bio > p {
+        font-size: 1.25em;
+
+    }
+
+    .git:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .git:active {
+        background-color: black;
+        color: white;
     }
 
     .hide {
