@@ -1,1 +1,49 @@
+* {
+    border: 1px solid cornflowerblue;
+}
 
+body {
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, [row] auto);
+    height: auto;
+}
+
+.sidebar {
+    grid-row: row / span 2;
+}
+
+.projects {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-container {
+    max-width: 250px;
+    margin: 20px;
+}
+
+img {
+    width: 250px;
+}
+
+.project-description > p {
+    margin: 0;
+}
+
+.project-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-heading > h3 {
+    margin: 0;
+}
