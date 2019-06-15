@@ -1,9 +1,34 @@
-* {
+/* * {
     border: 1px solid cornflowerblue;
+} */
+
+html, body {
+    height: 100%;
 }
 
 body {
     margin: 0;
+}
+
+header {
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+nav > p {
+    padding-top: .75em;
+}
+
+i {
+    color: black;
+}
+
+.social-media > a > i {
+    padding-right: .5em;
+}
+
+.social-media {
+    padding-top: .75em;
 }
 
 .wrapper {
@@ -11,11 +36,15 @@ body {
     grid-gap: 20px;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, [row] auto);
-    height: auto;
+    height: 100%;
 }
 
 .sidebar {
     grid-row: row / span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #EBECED;
 }
 
 .projects {
@@ -23,25 +52,30 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-top: 3em;
 }
 
 .project-container {
-    max-width: 250px;
+    max-width: 300px;
     margin: 20px;
+    border-bottom: 1px solid #EBECED;
+    border-bottom-left-radius: 5px;
 }
 
 img {
-    width: 250px;
+    width: 300px;
 }
 
 .project-description > p {
     margin: 0;
+    background-color: white;
 }
 
 .project-heading {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: white;
 }
 
 .project-heading > h3 {
