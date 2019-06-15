@@ -8,6 +8,7 @@ body {
 
 header {
     margin: auto;
+    text-align: center;
 }
 
 nav {
@@ -17,9 +18,21 @@ nav {
     justify-content: space-evenly;
 }
 
+nav > p {
+    font-size: 1.25em;
+}
+
+.social-media > a > i {
+    padding-right: .35em;
+}
+
+.social-media {
+    padding-bottom: .75em;
+}
+
 .logo {
-    font-size: 3em;
-    margin-top: 0;
+    font-size: 3.25em;
+    margin: 0;
     padding-top: .5em;
 }
 
@@ -63,6 +76,38 @@ img {
     margin: 0;
 }
 
+.git {
+    padding: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        padding-top: .25em;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav > p {
+        padding-right: 1.25em;
+    }
+
+    .projects {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .hide {
+        display: none;
+    }
+}
+
 @media (min-width: 1400px) {
     html, body {
         height: 100%;
@@ -71,6 +116,7 @@ img {
     header {
         margin: auto;
         margin-top: 1em;
+        text-align: left;
     }
 
     nav {
