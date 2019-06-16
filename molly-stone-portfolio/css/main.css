@@ -98,6 +98,24 @@ img {
     font-size: 1.25em;
 }
 
+.resume {
+    padding: 1.25em;
+}
+
+.resume > h3 {
+    font-size: 1.5em;
+}
+
+.skills-1, .skills-2 {
+    font-size: 1.25em;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .hide {
     display: none;
 }
