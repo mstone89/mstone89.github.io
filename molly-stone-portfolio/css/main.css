@@ -48,7 +48,7 @@ i {
     color: black;
 }
 
-h3, h4, .logo {
+h3, h4, h1, .logo {
     font-family: 'Arsenal', sans-serif;
 }
 
@@ -231,6 +231,26 @@ img {
         margin: 20px;
         border-bottom: 1px solid #EBECED;
         border-bottom-left-radius: 5px;
+    }
+
+    .resume {
+        grid-column: span 2;
+    }
+
+    .skills {
+        justify-content: left;
+    }
+
+    .skills > .skills-1 > p {
+        margin: .5em 0;
+    }
+
+    .skills > .skills-2 > p {
+        margin: .5em 0;
+    }
+
+    .skills-2 {
+        padding-left: 3em;
     }
 
     .bio {
