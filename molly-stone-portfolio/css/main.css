@@ -105,14 +105,19 @@ img {
     margin: 2em;
 }
 
-.bio > h1 {
-    font-size: 2.5em;
+.bio > div > h1 {
+    font-size: 3em;
     font-family: 'Arsenal', sans-serif;
     margin-bottom: 0;
 }
 
-.bio > p {
+.bio > div > p {
     font-size: 1.25em;
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
 }
 
 .resume {
@@ -131,6 +136,22 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.experience > h4 {
+    font-size: 1.25em;
+}
+
+.experience > p {
+    font-size: 1.25em;
+}
+
+.education > h4 {
+    font-size: 1.25em;
+}
+
+.education > p {
+    font-size: 1.25em;
 }
 
 .hide {
@@ -156,12 +177,32 @@ img {
         flex-wrap: wrap;
     }
 
-    .bio > p {
+    .bio {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bio-content > p {
+        padding-right: 40px;
+    }
+
+    .profile-image {
+        margin-top: 120px;
+        height: auto;
+    }
+
+    .bio > div > p {
         font-size: 1.5em;
     }
 
     .hide {
         display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .bio > div > p {
+        font-size: 2em;
     }
 }
 
@@ -275,9 +316,8 @@ img {
         padding-top: 3.5em;
     }
 
-    .bio > p {
+    .bio > div > p {
         font-size: 1.25em;
-
     }
 
     .git:hover {
