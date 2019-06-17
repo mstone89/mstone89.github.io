@@ -64,6 +64,23 @@ img {
     width: 300px;
 }
 
+.wishlist {
+    width: 300px;
+    height: 211px;
+    background-color: #483F4D;
+}
+
+.b > a {
+    text-decoration: none;
+}
+
+.wishlist > h1 {
+    margin: 0;
+    color: white;
+    font-family: 'Fredericka the Great';
+    font-size:100px;
+}
+
 .project-description > p {
     margin: 0;
     background-color: white;
