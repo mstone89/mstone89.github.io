@@ -83,6 +83,7 @@ img {
     border-bottom: 1px solid #EBECED;
     border-bottom-left-radius: 5px;
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .project-description > p {
@@ -317,7 +318,7 @@ footer {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        padding-top: 4em;
+        padding-top: 8em;
     }
 
     .project-container {
