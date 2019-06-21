@@ -180,6 +180,10 @@ footer {
     display: none;
 }
 
+.underline {
+    text-decoration: underline
+}
+
 @media (min-width: 768px) {
     .logo {
         padding-top: .25em;
