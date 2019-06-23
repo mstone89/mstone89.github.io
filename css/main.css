@@ -1,3 +1,7 @@
+/* * {
+    border: 1px solid gold;
+} */
+
 body {
     margin: 0;
 }
@@ -40,9 +44,18 @@ nav > p {
     padding-top: .5em;
 }
 
+.subtitle {
+    font-size: 1.5em;
+    margin: 10px auto 15px auto;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #cecece;
+    width: 250px;
+}
+
 p {
     font-family: 'Dosis', sans-serif;
 }
+
 
 i {
     color: black;
