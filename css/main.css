@@ -335,7 +335,7 @@ footer {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        padding-top: 8em;
+        padding-top: 9em;
     }
 
     .project-container {
@@ -366,7 +366,7 @@ footer {
 
     .bio {
         grid-column: span 2;
-        padding-top: 3.5em;
+        padding-top: 5em;
     }
 
     .bio > div > p {
